@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esto también es para ti</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, #b03060 0%, #7f1d1d 80%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow: auto; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 40px 15px;
+    }
+
+    h1 {
+      font-size: 46px;
+      color: #ff8fb3;
+      text-shadow: 0 0 10px rgba(255, 140, 180, 0.8);
+      text-align: center;
+      margin-bottom: 20px;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px rgba(255, 140, 180, 0.8); }
+      50% { text-shadow: 0 0 18px rgba(255, 200, 220, 1); }
+      100% { text-shadow: 0 0 10px rgba(255, 140, 180, 0.8); }
+    }
+
+    .cuadro-grande {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 26px;
+      padding: 40px 30px;
+      border: none;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      max-width: 850px;
+      margin: 20px auto 30px;
+      text-align: center;
+      color: #ffeaf3;
+      z-index: 1;
+    }
+
+    .cuadro-grande h2 {
+      color: #ff8fb3;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .cuadro-grande h2::after {
+      content: " ❤";
+      color: #ff6f91;
+      font-size: 20px;
+      margin-left: 4px;
+    }
+
+    .cuadro-grande p {
+      color: #ffeaf3;
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .boton-siguiente {
+      background-color: #ff6f91;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: 0.3s ease;
+    }
+
+    .boton-siguiente:hover {
+      background-color: #ff4c70;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 80, 130, 0.7);
+    }
+
+    .boton-centro {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      z-index: 2;
+    }
+
+    
+    .heart {
+      position: fixed;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      transform: rotate(-45deg);
+      top: -40px;
+      border-radius: 6px;
+      opacity: 0;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -13px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 13px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-60px) rotate(-45deg) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(-45deg) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>Si supieras...</h1>
+
+    <div class="cuadro-grande">
+      <h2>Lo que aprendí contigo</h2>
+      <p>
+        Hay personas que uno no olvida, no por costumbre, sino porque dejaron algo que no se borra. Tú fuiste una de
+        esas. No lo digo desde la tristeza, sino desde el cariño de haber vivido algo bonito, y de saber que sigue
+        existiendo un aprecio sincero.
+      </p>
+    </div>
+
+    <div class="cuadro-grande">
+      <h2>Y también...</h2>
+      <p>
+        Si supieras lo que generas solo con estar, entenderías por qué es tan fácil pensar en ti. No es solo por cómo
+        luces, sino por la forma en la que haces sentir, sin siquiera darte cuenta. Tienes algo que llama, que calma, y
+        que deja ganas de volver a coincidir.
+      </p>
+    </div>
+
+    <div class="boton-centro">
+      <a href="cuarta.html" class="boton-siguiente"> Siguiente ✨</a>
+    </div>
+  </section>
+
+  <script>
+ 
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+   
+    setInterval(crearCorazon, 200);
+  </script>
+</body>
+
+</html>

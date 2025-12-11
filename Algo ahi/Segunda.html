@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esto también es para ti</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, #b03060 0%, #7f1d1d 80%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow: hidden; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    section {
+      width: 100%;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 10px 0 20px;
+      text-align: center;
+      color: #ff8fb3;
+      text-shadow: 0 0 10px rgba(255, 140, 180, 0.8);
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px rgba(255, 140, 180, 0.8); transform: scale(1); }
+      50% { text-shadow: 0 0 18px rgba(255, 190, 210, 1); transform: scale(1.02); }
+      100% { text-shadow: 0 0 10px rgba(255, 140, 180, 0.8); transform: scale(1); }
+    }
+
+    .cuadro-grande {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 26px;
+      padding: 40px 35px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      max-width: 900px;
+      margin: 40px auto 45px;
+      color: #ffeaf3;
+      text-align: center;
+    }
+
+    .cuadro-grande h2 {
+      color: #ff8fb3;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .cuadro-grande h2::after {
+      content: " ❤";
+      color: #ff6f91;
+    }
+
+    .cuadro-grande h3 {
+      color: #ffeaf3;
+      font-weight: 500;
+      line-height: 1.7;
+      font-size: 18px;
+      width: 90%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .cuadros-extra {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+    }
+
+    .cuadro {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 26px;
+      padding: 22px 20px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      text-align: center;
+      color: #ffeaf3;
+    }
+
+    .cuadro h2 {
+      color: #ff8fb3;
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .cuadro h2::after {
+      content: " ❤";
+      color: #ff6f91;
+    }
+
+    .cuadro p {
+      color: #ffeaf3;
+      font-weight: 500;
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .volver-btn {
+      display: block;
+      width: fit-content;
+      margin: 10px auto 30px;
+      padding: 10px 24px;
+      background-color: #ff6f91;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: 0.3s ease;
+    }
+
+    .volver-btn:hover {
+      background-color: #ff4c70;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 80, 130, 0.7);
+    }
+
+    
+    .heart {
+      position: fixed;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      transform: rotate(-45deg);
+      top: -40px;
+      border-radius: 6px;
+      opacity: 0;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -13px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 13px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-60px) rotate(-45deg) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(-45deg) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>Cosas que me gustan de ti</h1>
+
+    <div class="cuadro-grande">
+      <h2>Lo que más me gusta de ti</h2>
+      <h3>
+        • Tus ojitos, tan lindos que iluminan cualquier momento.<br>
+        • Tu risa dulce y contagiosa, capaz de alegrar hasta el peor día.<br>
+        • Tus pestañas, que hacen que cada mirada sea especial.<br>
+        • Tu presencia, que tiene algo mágico y único que me encanta.
+      </h3>
+    </div>
+
+    <div class="cuadros-extra">
+      <div class="cuadro">
+        <h2>Tu manera de expresarte</h2>
+        <p>La forma en la que hablas tiene algo especial, algo tan tuyo, tan tierno, que siempre logra sacarme una sonrisa.</p>
+      </div>
+
+      <div class="cuadro">
+        <h2>Tu forma de ser</h2>
+        <p>Hay algo en tu forma de ser que simplemente se siente bien. Sin esfuerzo, logras que todo a tu alrededor tenga un toque más bonito.</p>
+      </div>
+
+      <div class="cuadro">
+        <h2>Lo que causas en mí</h2>
+        <p>No sabría explicarlo, pero contigo todo se siente más tranquilo. Con solo saber de ti, el día ya mejora un poquito.</p>
+      </div>
+    </div>
+
+    <a href="tercera.html" class="volver-btn">Ver más 💌</a>
+  </section>
+
+  <script>
+  
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+   
+    setInterval(crearCorazon, 200);
+  </script>
+</body>
+
+</html>

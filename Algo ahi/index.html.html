@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esto también es para ti</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, #b03060 0%, #7f1d1d 80%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff6f91;
+      font-size: 48px;
+      
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff6f91;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4c70;
+      box-shadow: 0 0 10px #ff80a1;
+      transform: scale(1.05);
+    }
+
+    
+    .heart {
+      position: fixed;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      transform: rotate(-45deg);
+      top: -40px;
+      border-radius: 6px;
+      opacity: 0;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: #ff6f91;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -13px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 13px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-60px) rotate(-45deg) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(-45deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Hola Dairita✨</h1>
+    <p>Tal vez el destino no siempre nos cruza como antes, pero esta es mi forma de volver a acercarme, sin decir mucho, solo sintiendo.</p>
+    <button onclick="location.href='segunda.html'">Descubre más 💖</button>
+  </div>
+
+  <script>
+
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 4) + "s"; 
+      document.body.appendChild(heart);
+
+     
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    
+    setInterval(crearCorazon, 200);
+  </script>
+
+</body>
+</html>
+
